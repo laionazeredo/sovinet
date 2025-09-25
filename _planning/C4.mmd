@@ -1,0 +1,17 @@
+C4Context
+    title Sovinet - Plataforma de conexões progressistas e revolucionárias
+
+    Enterprise_Boundary(sovinet, "Sovinet") {
+
+        Person(aplicante, "Aplicante", "Uma pessoa ou organização oferecendo serviços")
+        System(sovinet-ui, "Sovinet UI", "Login, Signup, Aplicações e Conexões")
+        System_Ext(linkedin, "Linkedin API", "Fornece login social")
+        System_Ext(email, "Email Provider", "Envia emails para os usuários")
+        Person(demandante, "Demandante", "Uma pessoa ou organização demandando serviços")
+
+
+        Rel(aplicante, sovinet-ui, "Aplica")
+        Rel(demandante, sovinet-ui, "Demanda")
+        Rel(sovinet-ui, linkedin, "Processes payments via")
+        Rel(sovinet-ui, email, "Notifica via email")
+    }
